@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  lunar-image-processing:
+    build:
+      context: ../image_processing
+      dockerfile: "../.docker/image.Dockerfile"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "50"
+    ports:
+      - "${PORT}:5000"
+    expose:
+      - "5000"
+    container_name: lunar-image-processing
+    volumes:
+      - lunar-storage:/app/dst
+
+volumes:
+  lunar-storage:
+    driver: local
+
