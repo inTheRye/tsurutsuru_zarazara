@@ -17,3 +17,8 @@ $ curl -X POST -F file=@01.png http://localhost:8080/data
 $ curl -X POST -F file=@01.png http://localhost:8080/wav
 "return wave file"
 ```
+
+## !!!! Caution !!!!
+
+This docker container is not secure!
+It is for prototype-use because it will expose the 8080 port for everyone!
